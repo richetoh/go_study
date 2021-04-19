@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/getveryrichet/go_study/json/marshal"
+	"github.com/getveryrichet/go_study/json/unmarshal"
 )
 
 type Book struct {
@@ -18,7 +18,8 @@ type Book2 struct {
 func main() {
 	// marshal.ConvertBasicTypes()
 	// marshal.ConvertSlicesMaps()
-	marshal.StructTest()
-	marshal.StructBindingTest()
+	// marshal.StructTest()
+	// marshal.StructBindingTest()
 
+	unmarshal.ByteToMap()
 }
