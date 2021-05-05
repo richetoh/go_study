@@ -24,3 +24,14 @@ func Gugudan(n int) {
 	}
 
 }
+
+func Oddsquare() {
+
+	start := 1
+
+	for start <= 9 {
+		fmt.Printf("%d * %d = %d\n", start, start, start*start)
+		start += 2
+	}
+
+}
