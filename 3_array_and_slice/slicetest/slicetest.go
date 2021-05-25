@@ -10,6 +10,13 @@ func CreateArraySlice() []int16 {
 	return intArray
 
 }
+func CreateArraySlice2() []int16 {
+	// var intArray [5]int16 = [...]int16{1, 2, 3, 4, 5}
+	// var intArray [5]int16 = [5]int16{1, 2, 3, 4, 5}
+	var intSlice = make([]int16, 3)
+	intSlice[1] = 0
+	return intSlice
+}
 
 func printArraySlice(a []int16) {
 	fmt.Println("PrintArraySlice")
@@ -18,11 +25,26 @@ func printArraySlice(a []int16) {
 	}
 }
 
-func processArraySlice(a []int16) {
-	fmt.Println("ProcessArraySlice")
+func InsertValueToSlice(a []int16) {
+	fmt.Println("InsertValueToSlice")
 	for i := 0; i < len(a); i++ {
 		a[i] = 999
 	}
+}
+func TraverseSlice(a []int16) {
+	fmt.Println("ProcessArraySlice ver1")
+	for i := 0; i < len(a); i++ {
+		fmt.Println(a[i])
+	}
+	fmt.Println("ProcessArraySlice ver2")
+	for i, v := range a {
+		fmt.Println(i, v)
+	}
+}
+
+func AppendValueToSlice(a []int16) {
+	//append returns new slice
+	a = append(a, 4)
 }
 
 func CopySlice() {
@@ -39,7 +61,7 @@ func CopySlice() {
 func TestSlice() {
 	a := CreateArraySlice()
 	printArraySlice(a)
-	processArraySlice(a)
+	InsertValueToSlice(a)
 	printArraySlice(a)
 }
 

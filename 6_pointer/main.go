@@ -9,5 +9,13 @@ func main() {
 	// pointertest.ChangeValueOfPinter()
 	// pointertest.CompareAddress()
 	// pointertest.TestChangeValue()
-	pointertest.TestChangeValueUsePointer()
+	// pointertest.TestChangeValueUsePointer()
+
+	// a := "haha"
+	// pointertest.PrintAddressOfString(&a, a)
+
+	// b := pointertest.Data{}
+	// pointertest.PrintAddressOfStruct(&b, b)
+
+	pointertest.CompareAddressOfPointers()
 }

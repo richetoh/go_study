@@ -2,6 +2,10 @@ package pointertest
 
 import "fmt"
 
+type Data struct {
+	Value string
+}
+
 func AssignValueToPointer() {
 
 	var a int = 500
@@ -102,4 +106,40 @@ func TestChangeValueUsePointer() {
 
 	fmt.Println(q)
 	fmt.Println(a)
+}
+
+func PrintAddressOfString(a *string, b string) {
+
+	fmt.Printf("%s's address = %x \n", *a, *a)
+	fmt.Printf("%s's address = %x \n", b, b)
+}
+
+func PrintAddressOfStruct(a *Data, b Data) {
+
+	//pointer's address
+	fmt.Println("a's address = ", &a)
+
+	//struct's pointer's address
+	fmt.Printf("b's address = %p\n", &b)
+}
+
+func CompareAddressOfPointers() {
+	// a := 100
+	// b := 100
+
+	// fmt.Println("a's address = ", &a, "b's address", &b)
+
+	c := "haha"
+	// d := "haha"
+	// fmt.Println("c's address = ", &c, "b's address", &d)
+
+	var p *string
+	p = &c
+
+	fmt.Printf("value in address where p points %v\n", *p)
+	fmt.Printf("value in address where p points %v\n", p)
+	fmt.Printf("value in address where p points %v\n", *&c)
+	fmt.Printf("address where p points %p\n", p)
+	fmt.Printf("c's addres %p\n", &c)
+	fmt.Println("pointer p's address", &p, "c's address", &c)
 }
